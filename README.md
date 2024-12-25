@@ -23,16 +23,20 @@ next_state, reward, done, _, __ = env.step(action)
 ### 4. Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() 
 ```
 def take_action(self. state)
+    ....
     'state = torch.tensor(np.array([state]), dtype=torch.float).to(self.device)'
+    ....
 ```
 
 ### 5. the new version env cant stop automaticly, so we need to add a counter
 ```
-            for i_episode in range(int(num_episodes / 10)):
-                episode_return = 0
-                state = env.reset(seed=0)[0]
-                done = False
-                'steps = 0'
-                while not done 'and steps < 200':
-                    'steps += 1'
+....
+    for i_episode in range(int(num_episodes / 10)):
+        episode_return = 0
+        state = env.reset(seed=0)[0]
+        done = False
+        'steps = 0'
+        while not done 'and steps < 200':
+            'steps += 1'
+            ....
 ```
